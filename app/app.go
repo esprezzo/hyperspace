@@ -97,9 +97,9 @@ import (
 	tmos "github.com/tendermint/tendermint/libs/os"
 	dbm "github.com/tendermint/tm-db"
 
-	encparams "github.com/ChihuahuaChain/chihuahua/app/params"
+	encparams "github.com/esprezzo/versus/app/params"
 
-	"github.com/ChihuahuaChain/chihuahua/docs"
+	"github.com/esprezzo/versus/docs"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmclient "github.com/CosmWasm/wasmd/x/wasm/client"
@@ -107,10 +107,10 @@ import (
 )
 
 const (
-	Bech32Prefix    = "chihuahua"
-	Name            = "chihuahua"
-	v420UpgradeName = "v420"
-	NodeDir         = ".chihuahuad"
+	Bech32Prefix     = "versus"
+	Name             = "versus"
+	FirstUpgradeName = "valpha2"
+	NodeDir          = ".versusd"
 )
 
 var (
@@ -629,7 +629,7 @@ func New(
 		panic(err)
 	}
 
-	if upgradeInfo.Name == v420UpgradeName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
+	if upgradeInfo.Name == FirstUpgradeName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
 		storeUpgrades := store.StoreUpgrades{}
 
 		// configure store loader that checks if version == upgradeHeight and applies store upgrades
@@ -821,7 +821,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 
 // RegisterUpgradeHandlers returns upgrade handlers
 func (app *App) RegisterUpgradeHandlers(cfg module.Configurator) {
-	app.UpgradeKeeper.SetUpgradeHandler(v420UpgradeName, func(ctx sdk.Context, plan upgradetypes.Plan, vm module.VersionMap) (module.VersionMap, error) {
+	app.UpgradeKeeper.SetUpgradeHandler(FirstUpgradeName, func(ctx sdk.Context, plan upgradetypes.Plan, vm module.VersionMap) (module.VersionMap, error) {
 
 		return app.mm.RunMigrations(ctx, cfg, vm)
 	})

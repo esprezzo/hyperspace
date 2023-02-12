@@ -7,8 +7,8 @@ import (
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ChihuahuaChain/chihuahua/app"
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
+	"github.com/esprezzo/versus/app"
 )
 
 func TestInitCmd(t *testing.T) {

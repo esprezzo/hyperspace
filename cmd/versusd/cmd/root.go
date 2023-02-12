@@ -33,14 +33,14 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/ChihuahuaChain/chihuahua/app"
-	"github.com/ChihuahuaChain/chihuahua/app/params"
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/esprezzo/versus/app"
+	"github.com/esprezzo/versus/app/params"
 )
 
-// NewRootCmd creates a new root command for chihuahuad. It is called once in the
+// NewRootCmd creates a new root command for versusd. It is called once in the
 // main function.
 func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	encodingConfig := app.MakeEncodingConfig()
@@ -65,7 +65,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 
 	rootCmd := &cobra.Command{
 		Use:   version.AppName,
-		Short: "The Most Loyal Cosmos Dog Coin",
+		Short: "The Most Game Tight Cosmos Coin",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
 			cmd.SetOut(cmd.OutOrStdout())

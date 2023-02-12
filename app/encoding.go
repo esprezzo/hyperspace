@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/ChihuahuaChain/chihuahua/app/params"
+	"github.com/esprezzo/versus/app/params"
 
 	"github.com/cosmos/cosmos-sdk/std"
 )
