@@ -1,4 +1,4 @@
-module github.com/esprezzo/versus
+module github.com/esprezzo/hyperspace
 
 go 1.19
 

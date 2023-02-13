@@ -31,18 +31,18 @@ go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbl
 # go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=boltdb' -tags boltdb ./...
 
 # Initialize chain.
-versusd init test
+hyperspaced init test
 
 # Get Genesis
-wget -O ~/.versusd/config/genesis.json https://raw.githubusercontent.com/esprezzo/versus/main/mainnet/genesis.json
+wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/main/mainnet/genesis.json
 
 
 
 # Get "trust_hash" and "trust_height".
 INTERVAL=1000
-LATEST_HEIGHT=$(curl -s https://versus-rpc.esprezzo.io/block | jq -r .result.block.header.height)
+LATEST_HEIGHT=$(curl -s https://hyperspace-rpc.esprezzo.io/block | jq -r .result.block.header.height)
 BLOCK_HEIGHT=$(($LATEST_HEIGHT-$INTERVAL)) 
-TRUST_HASH=$(curl -s "https://versus-rpc.esprezzo.com/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+TRUST_HASH=$(curl -s "https://hyperspace-rpc.esprezzo.com/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 # Print out block and transaction hash from which to sync state.
 echo "trust_height: $BLOCK_HEIGHT"

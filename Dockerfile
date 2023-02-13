@@ -29,8 +29,8 @@ RUN BUILD_TAGS=muslc LINK_STATICALLY=true LDFLAGS=-buildid=$VERSION make build
 ARG PLATFORM="linux/amd64"
 FROM --platform=${PLATFORM} gcr.io/distroless/cc:$IMG_TAG
 ARG IMG_TAG
-COPY --from=builder /src/app/bin/versusd /usr/local/bin/versusd
+COPY --from=builder /src/app/bin/hyperspaced /usr/local/bin/hyperspaced
 
 EXPOSE 26656 26657 1317 9090
 
-ENTRYPOINT ["versusd"]
+ENTRYPOINT ["hyperspaced"]

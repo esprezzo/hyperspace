@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/esprezzo/versus/app/params"
+	"github.com/esprezzo/hyperspace/app/params"
 
 	"github.com/cosmos/cosmos-sdk/std"
 )

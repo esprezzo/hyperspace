@@ -47,7 +47,7 @@ ifeq ($(LEDGER_ENABLED),true)
   endif
 endif
 
-ifeq (cleveldb,$(findstring cleveldb,$(versus_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(hyperspace_BUILD_OPTIONS)))
   build_tags += gcc cleveldb
 endif
 build_tags += $(BUILD_TAGS)
@@ -60,17 +60,17 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=versus \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=versusd \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=hyperspace \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=hyperspaced \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
 			-X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TM_VERSION)
 
-ifeq (cleveldb,$(findstring cleveldb,$(versus_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(hyperspace_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=cleveldb
 endif
-ifeq (,$(findstring nostrip,$(versus_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(hyperspace_BUILD_OPTIONS)))
   ldflags += -w -s
 endif
 ifeq ($(LINK_STATICALLY),true)
@@ -81,7 +81,7 @@ ldflags := $(strip $(ldflags))
 
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 # check for nostrip option
-ifeq (,$(findstring nostrip,$(versus_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(hyperspace_BUILD_OPTIONS)))
   BUILD_FLAGS += -trimpath
 endif
  
@@ -91,10 +91,10 @@ endif
 all: install
 
 install: go.sum
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/versusd
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/hyperspaced
 
 build:
-	go build $(BUILD_FLAGS) -o bin/versusd ./cmd/versusd
+	go build $(BUILD_FLAGS) -o bin/hyperspaced ./cmd/hyperspaced
 
 BUILD_TARGETS := build install
 
@@ -115,6 +115,6 @@ build-reproducible-generic: go.sum
 		--build-arg PLATFORM=$(PLATFORM) \
 		--build-arg VERSION="$(VERSION)" \
 		-f Dockerfile .
-	$(DOCKER) create -ti --name $(subst /,-,latest-build-$(PLATFORM)) latest-build-$(PLATFORM) versusd
+	$(DOCKER) create -ti --name $(subst /,-,latest-build-$(PLATFORM)) latest-build-$(PLATFORM) hyperspaced
 	mkdir -p $(BUILDDIR)/$(NETWORK)/$(PLATFORM)/
-	$(DOCKER) cp -a $(subst /,-,latest-build-$(PLATFORM)):/usr/local/bin/versusd $(BUILDDIR)/$(NETWORK)/$(PLATFORM)/versusd
+	$(DOCKER) cp -a $(subst /,-,latest-build-$(PLATFORM)):/usr/local/bin/hyperspaced $(BUILDDIR)/$(NETWORK)/$(PLATFORM)/hyperspaced

@@ -1,6 +1,11 @@
+# Esprezzo Hyperspace
+##### _Gaming focused Layer 1 blockchain node maintained by Esprezzo_
 
-# Versus
-##### _Gaming focused Layer 1_
+This software is used to run Esprezzo testnets (and mainnet when ready):
+
+## Testnet v1: "The Barrens"
+This is the first iteration of our testnet. Use at your own risk. All balances will be thrown away on migration to Testnet v2.
+
 Stay up to date with the latest news on our Socials
  - Join our [Telegram Community](https://t.me/)
  - Join our [Discord](https://discord.gg/)
@@ -52,24 +57,24 @@ The output should be `go version go1.19 linux/amd64`
 
 ```bash
 # run these commands
-git clone https://github.com/esprezzo/versus.git
-cd versus
+git clone https://github.com/hyperspace/hyperspace.git
+cd hyperspace
 git fetch --tags
 git checkout v0.1.0
 make install
 ```
 
-To verify the installation you can run `versusd version` and it should return `v0.1.0`
+To verify the installation you can run `hyperspaced version` and it should return `v0.1.0`
 
 - #### Initialize the Chain
 Replace `$MONIKERNAME` with your choosen node name
 
-`versusd init $MONIKER_NAME --chain-id versa-1`
+`hyperspaced init $MONIKER_NAME --chain-id hypertest-1`
 
 - #### Download the Genesis
 
 ```bash
-wget -O ~/.versusd/config/genesis.json https://raw.githubusercontent.com/esprezzo/versa/main/mainnet/genesis.json
+wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/main/mainnet/genesis.json
 ```
 
 - #### Add Seeds & Persistent Peers
@@ -78,7 +83,7 @@ TODO
 - #### Update minimum-gas-price in app.toml
 
 ```bash
-sed -i.bak 's/minimum-gas-prices =.*/minimum-gas-prices = "1uxpz"/' $HOME/.versusd/config/app.toml
+sed -i.bak 's/minimum-gas-prices =.*/minimum-gas-prices = "1uxpz"/' $HOME/.hyperspaced/config/app.toml
 ```
 
 - #### Setting up Cosmovisor
@@ -94,8 +99,8 @@ which cosmovisor
 
 # run these commands
 cat <<EOF >> ~/.profile
-export DAEMON_NAME=versusd
-export DAEMON_HOME=$HOME/.versusd
+export DAEMON_NAME=hyperspaced
+export DAEMON_HOME=$HOME/.hyperspaced
 EOF
 
 source ~/.profile
@@ -103,25 +108,25 @@ source ~/.profile
 echo $DAEMON_NAME
 
 # should return
-'versusd'
+'hyperspaced'
 
 # create the directories
 mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 
 # check the binary path with
-which versusd
+which hyperspaced
 
 # this should return
-'/home/your-user/go/bin/versusd'
+'/home/your-user/go/bin/hyperspaced'
 
 # copy the binary into
-cp $(which versusd) $DAEMON_HOME/cosmovisor/genesis/bin
+cp $(which hyperspaced) $DAEMON_HOME/cosmovisor/genesis/bin
 ```
 Set up the service file
 
 ```bash
-sudo nano /etc/systemd/system/versusd.service
+sudo nano /etc/systemd/system/hyperspaced.service
 
 # paste and edit <your-user> with your username
 [Unit]
@@ -134,8 +139,8 @@ ExecStart=/home/<your-user>/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
-Environment="DAEMON_NAME=versusd"
-Environment="DAEMON_HOME=/home/<your-user>/.versusd"
+Environment="DAEMON_NAME=hyperspaced"
+Environment="DAEMON_HOME=/home/<your-user>/.hyperspaced"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
@@ -148,46 +153,39 @@ Enable the service
 
 ```bash
 sudo -S systemctl daemon-reload
-sudo -S systemctl enable versusd
+sudo -S systemctl enable hyperspaced
 ```
-
-Get the latest [snapshot](https://polkachu.com/tendermint_snapshots/versus) (_Thanks to [Polkachu](https://twitter.com/polka_chu)_) and follow the Pruning tips to save some GB
 
 - #### Start the node
 
 You can start the node by running
 ```bash
-sudo systemctl start versusd
+sudo systemctl start hyperspaced
 
 # check the logs by running
-journalctl -u versusd -f
+journalctl -u hyperspaced -f
 ```
 The node will take some time to catch-up with the blockchain.
 You can follow the blocks being indexed by running
 
 ```bash
-journalctl -u versusd -f | grep indexed
+journalctl -u hyperspaced -f | grep indexed
 ```
-
-# Join the Validators _(mainnet)_
-
-Versus Governance [voted a proposal](https://www.mintscan.io/versus/proposals/3) enabling the minimum 5% Commission enforced by the blockchain.
 
 ```bash
 # create a new wallet for the validator
-
-versusd keys add <key-name>
+hyperspaced keys add <key-name>
 
 # save the seed phrase (mnemonic) in a safe place
-# copy the 'versus...' address and send some HUAHUA
+# copy the 'hyperspace...' address and send some HUAHUA
 # in order to pay for the validator creation's transaction
 
 # Make sure the Validator has fully synced before running 
-versusd tx staking create-validator \
+hyperspaced tx staking create-validator \
   --from "<key-name>" \
   --amount "1000000uxpz" \
-  --pubkey "$(versusd tendermint show-validator)" \
-  --chain-id "versus-1" \
+  --pubkey "$(hyperspaced tendermint show-validator)" \
+  --chain-id "hyperspace-1" \
   --moniker "<moniker>" \
   --commission-max-change-rate 0.01 \
   --commission-max-rate 0.20 \
@@ -199,13 +197,13 @@ versusd tx staking create-validator \
   --gas-prices "1uxpz"
   
 # Make sure to backup the priv_validator_key.json file in your
-# /home/<your-user>/.versusd/config directory
+# /home/<your-user>/.hyperspaced/config directory
 # and store it in a safe place
 ```
 
 **Congratulation!** Your Validator node should be up and running
 
-_Make sure to join our [Discord](https://discord.gg/versus) and contact a moderator if you have a mainnet node so we can invite you to the validator's channel to follow up the latest updates and future upgrades._
+_Make sure to join our [Discord](https://discord.gg/hyperspace) and contact a moderator if you have a mainnet node so we can invite you to the validator's channel to follow up the latest updates and future upgrades._
 
 ---
 

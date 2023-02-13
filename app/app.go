@@ -97,9 +97,9 @@ import (
 	tmos "github.com/tendermint/tendermint/libs/os"
 	dbm "github.com/tendermint/tm-db"
 
-	encparams "github.com/esprezzo/versus/app/params"
+	encparams "github.com/esprezzo/hyperspace/app/params"
 
-	"github.com/esprezzo/versus/docs"
+	"github.com/esprezzo/hyperspace/docs"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmclient "github.com/CosmWasm/wasmd/x/wasm/client"
@@ -107,10 +107,10 @@ import (
 )
 
 const (
-	Bech32Prefix     = "versus"
-	Name             = "versus"
+	Bech32Prefix     = "xpz"
+	Name             = "hyperspace"
 	FirstUpgradeName = "valpha2"
-	NodeDir          = ".versusd"
+	NodeDir          = ".hyperspaced"
 )
 
 var (
