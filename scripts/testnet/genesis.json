@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2023-02-13T05:12:41.176208Z",
+  "genesis_time": "2023-02-13T08:39:38.499564Z",
   "chain_id": "testnet-1",
   "initial_height": "1",
   "consensus_params": {
@@ -34,14 +34,7 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "xpz1jyzkvcnm93gsq5jgqq6hzq5v90j9vtzlpvs74p",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "xpz1dn6td389k9tewch7wyzzf0d7pljxju5jz83esr",
+          "address": "xpz16frr6n57mdhde6jmtghffte55lnnwpxju8hu8r",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -49,6 +42,13 @@
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "xpz1q7fm96wh6nym75d8hpx6wx4rk5ctecvlxq2tml",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "xpz1dn6td389k9tewch7wyzzf0d7pljxju5jz83esr",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -86,7 +86,7 @@
             },
             {
               "denom": "xpz",
-              "amount": "1000000000"
+              "amount": "3000000000"
             }
           ]
         },
@@ -111,7 +111,7 @@
         },
         {
           "denom": "xpz",
-          "amount": "4000000000"
+          "amount": "6000000000"
         }
       ],
       "denom_metadata": []
