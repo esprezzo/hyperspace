@@ -4,7 +4,7 @@
       {
         "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
         "description": {
-          "moniker": "ip-172-27-3-8",
+          "moniker": "testnet-validator-2",
           "identity": "",
           "website": "",
           "security_contact": "",
@@ -22,7 +22,7 @@
           "@type": "/cosmos.crypto.ed25519.PubKey",
           "key": "/nI+Eg0f/+htYOrW0/WDJJ+k6KrbbczZu4+hDypWXow="
         },
-        "value": { "denom": "stake", "amount": "1000000000" }
+        "value": { "denom": "stake", "amount": "800000000" }
       }
     ],
     "memo": "fe2cfff9f392d2362a2212d0c3fb8368940d89ae@172.27.3.8:26656",
@@ -44,6 +44,6 @@
     "fee": { "amount": [], "gas_limit": "200000", "payer": "", "granter": "" }
   },
   "signatures": [
-    "eG50V96c87dUqIcz4CKWp27R+U7jpql1zE0oInsZXTlGR7Lu6+tDXUZKcwnl3c28hR/Pl2bzJBhSeA4D9sDNTg=="
+    "pHzKus0uULnygynuDgTUb70L6z4PvX1bEcbyneq68ZYvyPs5EFLK5ia8ypRfNvR282fmjM77WwpjTkEI6uOlOg=="
   ]
 }
