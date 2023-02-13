@@ -4,7 +4,7 @@ hyperspaced add-genesis-account $(hyperspaced keys show testnet-owner -a) 100000
 
 
 # val 2
-hyperspaced add-genesis-account xx 1000000000stake,2000000000xpz
+hyperspaced add-genesis-account xpz1q7fm96wh6nym75d8hpx6wx4rk5ctecvlxq2tml 1000000000stake,2000000000xpz
 
 
 # val 3
