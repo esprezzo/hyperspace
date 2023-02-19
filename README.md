@@ -39,7 +39,8 @@ git checkout v0.1.0
 make install
 ```
 
-## If you need more direction configuring a system to compile and run a Golang 1.19
+### If you need more direction configuring a system to compile and run a Golang 1.19
+
 ### Using Ubuntu or Debian Linux
 
 - #### Install Prerequisites
