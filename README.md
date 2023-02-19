@@ -19,14 +19,14 @@ Stay up to date with the latest news on our Socials
 
 ## Dependencies
 - A mildly powerful Unix-like system 4CPU/16G (Linux, MacOS, maybe Windows/WSL?)
-- A working Go 1.19+ installation
+- A working Go 1.19+ installation (if compiling from source)
 - Basic Unix/Linux sysadmin skills
 - An internet connection
 
+### If you want to use a binary release see: [releases](https://github.io/esprezzo/hyperspace/releases).
+
+
 # Node Installation from source.
-
-### If you want to use a binary release see here: [releases](https://github.io/esprezzo/hyperspace/releases).
-
 
 ### If you want to install from source and already have a working Go 1.19+ installation:
 
