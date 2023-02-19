@@ -11,9 +11,10 @@ This software is used to run testnets (and mainnet when ready):
 Stay up to date with the latest news on our Socials
  - Join our [Discord](https://discord.gg/)
  - Follow us on [Twitter](https://twitter.com/)
- 
+
 ## Testnet v1: "The Barrens"
-This is the first iteration of our testnet. Use at your own risk. All balances will be thrown away on migration to Testnet v2.
+- This is the first iteration of our testnet. 
+- Use at your own risk. 
 
 Stay up to date with the latest news on our Socials
  - Join our [Discord](https://discord.gg/)
