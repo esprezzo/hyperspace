@@ -1,5 +1,6 @@
 # Hyperspace
-### Blockchain node software.
+
+### Cosmos + CosmWasm Proof of Stake 
 
 #### Focused on:
 - Cosmwasm based game services
