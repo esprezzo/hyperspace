@@ -18,10 +18,6 @@ Stay up to date with the latest news on our Socials
 - This is the first iteration of our testnet. 
 - Use at your own risk. 
 
-Stay up to date with the latest news on our Socials
- - Join our [Discord](https://discord.gg/)
- - Follow us on [Twitter](https://twitter.com/)
-
 ## Dependencies
 - A mildly powerful Unix-like system 4CPU/16G (Linux, MacOS, maybe Windows/WSL?)
 - A working Go 1.19+ installation (if compiling from source)
