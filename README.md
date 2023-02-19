@@ -96,14 +96,14 @@ make install
 To verify the installation you can run `hyperspaced version` and it should return `v0.1.0`
 
 - #### Initialize the Chain
-Replace `$MONIKERNAME` with your choosen node name
+Replace `$MONIKERNAME` with your choosen node name, this can be anything, like a "node id"
 
-`hyperspaced init $MONIKER_NAME --chain-id hypertest-1`
+`hyperspaced init $MONIKER_NAME --chain-id testnet-1`
 
 - #### Download the Genesis
 
 ```bash
-wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/main/mainnet/genesis.json
+wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/main/networks/testnet-1/genesis.json
 ```
 
 - #### Add Seeds & Persistent Peers
