@@ -8,14 +8,16 @@
 
 This software is used to run testnets (and mainnet when ready):
 
+Stay up to date with the latest news on our Socials
+ - Join our [Discord](https://discord.gg/)
+ - Follow us on [Twitter](https://twitter.com/)
+ 
 ## Testnet v1: "The Barrens"
 This is the first iteration of our testnet. Use at your own risk. All balances will be thrown away on migration to Testnet v2.
 
 Stay up to date with the latest news on our Socials
- - Join our [Telegram Community](https://t.me/)
  - Join our [Discord](https://discord.gg/)
  - Follow us on [Twitter](https://twitter.com/)
- - Check out our [Medium](https://medium.com/)
 
 ## Dependencies
 - A mildly powerful Unix-like system 4CPU/16G (Linux, MacOS, maybe Windows/WSL?)
