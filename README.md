@@ -26,9 +26,9 @@ Stay up to date with the latest news on our Socials
 
 ---
 
-# Node Installation from source.
+## Node Installation from source.
 
-### If you want to install from source and already have a working Go 1.19+ installation:
+#### If you want to install from source and already have a working Go 1.19+ installation:
 
 ```bash
 # run these commands
