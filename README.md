@@ -1,7 +1,12 @@
-# Esprezzo Hyperspace
-##### _Gaming focused Layer 1 blockchain node maintained by Esprezzo_
+# Hyperspace
+### Blockchain node software.
 
-This software is used to run Esprezzo testnets (and mainnet when ready):
+#### Focused on:
+- Cosmwasm based game services
+- On-chain consensus
+- Safe cross-chain composability w/IBC
+
+This software is used to run testnets (and mainnet when ready):
 
 ## Testnet v1: "The Barrens"
 This is the first iteration of our testnet. Use at your own risk. All balances will be thrown away on migration to Testnet v2.

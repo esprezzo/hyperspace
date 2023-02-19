@@ -86,8 +86,6 @@ ifeq (,$(findstring nostrip,$(hyperspace_BUILD_OPTIONS)))
 endif
  
 #$(info $$BUILD_FLAGS is [$(BUILD_FLAGS)])
-
-
 all: install
 
 install: go.sum
@@ -98,7 +96,6 @@ build:
 
 BUILD_TARGETS := build install
 
-
 build-reproducible-all: build-reproducible-amd64 build-reproducible-arm64
 
 build-reproducible-amd64:
@@ -107,7 +104,6 @@ build-reproducible-amd64:
 build-reproducible-arm64:
 	ARCH=aarch64 PLATFORM=linux/arm64 $(MAKE) build-reproducible-generic
 	
-
 build-reproducible-generic: go.sum
 	$(DOCKER) rm $(subst /,-,latest-build-$(PLATFORM)) || true
 	DOCKER_BUILDKIT=1 $(DOCKER) build -t latest-build-$(PLATFORM) \
