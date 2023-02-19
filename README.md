@@ -25,6 +25,7 @@ Stay up to date with the latest news on our Socials
 
 ### If you want to use a binary release see: [releases](https://github.io/esprezzo/hyperspace/releases).
 
+---
 
 # Node Installation from source.
 
