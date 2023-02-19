@@ -6,7 +6,7 @@
 - Smart contract based game services (Rust/CosmWasm)
 - Active on-chain consensus
 - Safe cross-chain smart contract composability w/IBC
-- Standardizing interoperability with the greater Cosmos/IBC enabled ecosystem
+- Standardizing interoperability with the greater Cosmos and IBC enabled ecosystem
 
 Stay up to date with the latest news on our Socials
  - Join our [Discord](https://discord.gg/)
