@@ -24,9 +24,11 @@ Stay up to date with the latest news on our Socials
 - An internet connection
 
 # Node Installation from source.
-## If you want to use a binary release see here: (releases/) 
 
-## If you want to install from source and already have a working Go 1.19+ installation:
+### If you want to use a binary release see here: [releases](https://github.io/esprezzo/hyperspace/releases).
+
+
+### If you want to install from source and already have a working Go 1.19+ installation:
 
 ```bash
 # run these commands
