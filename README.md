@@ -6,10 +6,6 @@
 - On-chain consensus
 - Safe cross-chain composability w/IBC
 
-
-### This software is used to run all of our testnets (and mainnet when ready)
-
-
 Stay up to date with the latest news on our Socials
  - Join our [Discord](https://discord.gg/)
  - Follow us on [Twitter](https://twitter.com/)
