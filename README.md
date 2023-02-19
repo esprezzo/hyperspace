@@ -23,7 +23,7 @@ Stay up to date with the latest news on our Socials
 - Basic Unix/Linux sysadmin skills
 - An internet connection
 
-### If you want to use a binary release see: [releases](https://github.io/esprezzo/hyperspace/releases).
+### If you want to use a binary release see: [releases](https://github.io/esprezzo/hyperspace/releases) - coming soon
 
 ---
 
