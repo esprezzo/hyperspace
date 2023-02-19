@@ -3,8 +3,8 @@
 ### Cosmos + CosmWasm Proof of Stake node software
 
 #### Focused on:
-- Cosmwasm based game services
-- On-chain consensus
+- Growing list of reusable smart contract based game services
+- Active on-chain consensus
 - Safe cross-chain composability w/IBC
 
 Stay up to date with the latest news on our Socials
