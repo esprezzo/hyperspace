@@ -17,9 +17,29 @@ Stay up to date with the latest news on our Socials
  - Follow us on [Twitter](https://twitter.com/)
  - Check out our [Medium](https://medium.com/)
 
-# Node Installation
+## Dependencies
+- A mildly powerful Unix-like system 4CPU/16G (Linux, MacOS, maybe Windows/WSL?)
+- A working Go 1.19+ installation
+- Basic Unix/Linux sysadmin skills
+- An internet connection
 
-## Ubuntu/Debian etc.
+# Node Installation from source.
+## If you want to use a binary release see here: (releases/) 
+
+## If you want to install from source and already have a working Go 1.19+ installation:
+
+```bash
+# run these commands
+git clone https://github.com/esprezzo/hyperspace.git
+cd hyperspace
+git fetch --tags
+git checkout v0.1.0
+make install
+```
+
+## If you need more direction configuring a system to compile and run a Golang 1.19
+### Using Ubuntu or Debian Linux
+
 - #### Install Prerequisites
 
 ```bash
