@@ -1,6 +1,6 @@
 # Hyperspace
 
-### Cosmos + CosmWasm Proof of Stake 
+### Cosmos + CosmWasm Proof of Stake node software
 
 #### Focused on:
 - Cosmwasm based game services
