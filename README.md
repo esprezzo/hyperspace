@@ -19,6 +19,7 @@ Stay up to date with the latest news on our Socials
 
 # Node Installation
 
+## Ubuntu/Debian etc.
 - #### Install Prerequisites
 
 ```bash
