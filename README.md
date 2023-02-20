@@ -103,7 +103,7 @@ Replace `$MONIKERNAME` with your choosen node name, this can be anything, like a
 - #### Download the Genesis
 
 ```bash
-wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/main/networks/testnet-1/genesis.json
+wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esprezzo/hyperspace/develop/networks/testnet-1/genesis.json
 ```
 
 - #### Add Seeds & Persistent Peers
