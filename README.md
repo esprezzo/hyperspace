@@ -107,7 +107,11 @@ wget -O ~/.hyperspaced/config/genesis.json https://raw.githubusercontent.com/esp
 ```
 
 - #### Add Seeds & Persistent Peers
-TODO
+```bash
+seeds="fe2cfff9f392d2362a2212d0c3fb8368940d89ae@52.43.47.126:26656"
+peers="fe2cfff9f392d2362a2212d0c3fb8368940d89ae@52.43.47.126:26656"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.chihuahuad/config/config.toml
+```
 
 - #### Update minimum-gas-price in app.toml
 
